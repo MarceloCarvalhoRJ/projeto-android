@@ -1,0 +1,216 @@
+@charset "UTF-8"; /*aceitar pontuação e outros caracteres*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); /* para usar fontes dos google fonts */
+
+@font-face { /* para usar fontes baixadas */
+  font-family: android;
+  src: url('../fontes/idroid.otf') format('opentype'); /* se usar fontes TTF, o format será truetype */
+  font-weight: normal; /* peso da fonte, pode ser normal, bold, bolder, etc ou com numeros. */
+}
+:root { /* cria variaveis para cor e fonte:border: ; nome da variavel: e fonte ou cor; */
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --fonte-padrao: Arial, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --fonte-android: 'Android', cursive; 
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+  background-color: var(--cor0);
+  font-family: var(--fonte-padrao); /* utiliza a variavel da fonte ou cor */
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5)); /* cria um degrade no elemento */
+    min-height: 150px; /* determina uma altura mínima ou maxima se utilizar o max-height: */
+    text-align: center;
+    padding-top: 30px; 
+}
+
+header > h1 {
+  color: white;
+  font-family: var(--fonte-destaque);
+  font-size: 3em;
+  font-weight: normal;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.379); /* cria uma sombra no texto. 2px= devio-x | 2px=desvio-y | 0px=distorçao da sombra | color */ 
+}
+
+header > p {
+  font-family: var(--fonte-padrao);
+  font-size: 1.3em; 
+  text-align: center;
+  color: white;
+  max-width: 600px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  margin: auto;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.379);
+}
+
+nav {
+  background-color: var(--cor5);
+  padding: 10px;
+  box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.414); /* adicionar efeitos de sombra em volta de um elemento. offset-x | offset-y | blur-radius | color*/
+}
+
+nav > a {
+  text-decoration: none; /* é usada para definir a formatação de underline, overline, line-through ou blink. */
+  color: var(--cor1);
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px; /* permite definir como bordas arredondadas */
+  transition-duration: .5s; /* Especifica a duração em que as transições devem ocorrer. ex. mudar a cor de um elemento de branco para preto. */
+}
+
+nav > a:hover { /* pseudo-classe que ativa/muda um elemento com o mouse*/
+  background-color: var(--cor3);
+  color: var(--cor5);
+}
+
+main {
+    background-color: white;
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px 20px;
+    box-shadow: 0px 0px  10px rgba(0, 0, 0, 0.5);
+    border-bottom-left-radius: 10px; /* Efeito borda no canto especifico. Neste exemplo o efeito borda seria apenas no canto esquerdo abaixo do elemento */
+    border-bottom-right-radius: 10px;
+
+}
+
+main h1 {
+    color: var(--cor5); 
+    font-family: var(--fonte-android); 
+    font-weight: normal;
+    font-size: 1.8em; 
+}
+
+main h2 {
+    font-family: var(--fonte-android);
+    color: var(--cor4);
+    font-size: 1.3em;
+    font-weight: normal;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+}
+
+main p {
+    margin: 15px 0px; 
+    text-align: justify; /* Define o alinhamento do texto. */
+    font-size: 1em;
+    line-height: 2em;  /* Define a altura entre as linhas de um texto. */
+    text-indent: 30px;  /* Define o espacamento entre a margem e a primeira linha do paragrafo*/
+}
+
+main strong {
+  color: var(--cor4);
+  font-weight: bold;
+}
+
+main a {
+  background-color: rgb(181, 247, 181);
+  color: rgb(2, 73, 2);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 2px 6px;
+}
+main a:hover {
+     text-decoration: underline;
+     color: var(--cor3);
+}
+main a::after {
+    content: '\00A0\1F517';   /*A propriedade CSS content é usada com os pseudoelementos ::before e ::after para gerar conteúdo em um elemento. Obs.: Codigo U+1F517 obtido no site https://emojipedia.org (excluindo o U+) */
+}
+
+main img {
+  width: 100%;
+  margin: auto;
+
+  display: block;
+  height: auto;
+}
+
+main img.pequena {
+    max-width: 350px;
+}
+
+div.video {
+  background-color: var(--cor5);
+  margin: 0px -20px 30px -20px;
+  padding: 20px;
+  padding-bottom: 61%;
+  position: relative;  /* Position define como um elemento pode ser posicionado (renderizado) no documento (página). Solucao dada pelo professor, ainda a ser melhor entendida */ 
+}
+
+div.video > iframe {
+    position: absolute; 
+    top: 5%;
+    left: 5%;  /* Position define como um elemento pode ser posicionado (renderizado) no documento (página). Solucao dada pelo professor, ainda a ser melhor entendida */ 
+    width: 90%;
+    height: 90%;
+}
+
+aside {
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.419);
+    
+    margin: 20px;
+}
+
+aside h3 {
+    background-color: var(--cor4);
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px;    /* Margen negativa para preenhcer todo paragrafo */
+    border-radius: 10px 10px 0px 0px;
+}
+
+aside ul { 
+  list-style: none; /* Define o tipo de marcadores da lista (bullet point)*/
+  columns: 2; /* Define a quantidade de colunas da lista */
+   /* 
+   para torcar a bolinha preta pelo tick ✔:
+   list-style-position: inside;
+   list-style-type: '\2714 (codigo da imagem)\00A00\00A00 (2 espaços)';
+   */
+}
+
+ul > li::before {
+  content: '✔ ';   
+}
+
+footer {
+  background-color: var(--cor5);
+  color: white;
+  font-size: 0.8em;
+  padding: 5px;
+  text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--cor1);
+    font-weight: bold;
+}
+
